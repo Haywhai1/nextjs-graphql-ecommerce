@@ -8,8 +8,12 @@ const apolloServer = new ApolloServer({
   resolvers,
 });
 
-//start the server and create a nexjs api route
-
 const handler = startServerAndCreateNextHandler(apolloServer);
 
-export { handler as GET, handler as POST };
+export async function GET(request: Request) {
+  return handler(request);
+}
+
+export async function POST(request: Request) {
+  return handler(request);
+}
