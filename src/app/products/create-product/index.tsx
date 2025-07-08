@@ -169,7 +169,7 @@ const CreateProduct = () => {
       });
 
       client.resetStore();
-      router.push("/products");
+      router.push("/");
     } catch (err) {
       console.error(err);
       alert("Failed to create product");
