@@ -73,7 +73,7 @@ const SingleProduct = () => {
     </div>
 
     <Link
-      href="/products"
+      href="/"
       className="inline-block mt-8 px-6 py-3 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition"
     >
       ← Back to products
