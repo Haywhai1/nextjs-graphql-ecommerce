@@ -89,7 +89,7 @@ export const resolvers = {
     },
     product: async (_: any, { id }: { id: string }) => {
       // const product = products.find((product) => product.id == Number(id));
-       await connectDB();
+      await connectDB();
       const product = await productModel.findById(id);
       if (!product) {
         throw new Error("Product not found");
@@ -114,6 +114,24 @@ export const resolvers = {
       } catch (error) {
         console.log(error);
       }
+    },
+
+    updateProduct: async (
+      _: any,
+      { id, ...payload }: { id: string } & Partial<ProductType> 
+    ) => {
+      await connectDB();
+      const updatedProduct = await productModel.findByIdAndUpdate(id, payload, {
+        new: true,
+      });
+
+      return updatedProduct;
+    },
+
+    deleteProduct: async (_: any, { id }: { id: string }) => {
+      await connectDB();
+      const deletedUser = await productModel.findByIdAndDelete(id);
+      return !!deletedUser;
     },
   },
 };

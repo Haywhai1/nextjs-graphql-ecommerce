@@ -96,6 +96,8 @@ const ProductList = () => {
                 src={product.image}
                 alt={product.name}
                 fill
+                priority
+                sizes="160px"
                 className="object-cover rounded"
               />
             </div>

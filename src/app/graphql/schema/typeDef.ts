@@ -28,5 +28,7 @@ export const typeDefs = gql`
 
   type Mutation {
     addProduct(name: String!, price: Float!, description: String!, category: String!, brand: String!, rating: Float!, inStock: Boolean!, image: String!): Product!
+    updateProduct(id: ID!, name: String!, price: Float!, description: String!, category: String!, brand: String!, rating: Float!, inStock: Boolean!, image: String!): Product!
+    deleteProduct(id: ID!): Boolean!
   }
 `;
